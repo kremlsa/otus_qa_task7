@@ -13,12 +13,12 @@
 
 Инструкция по запуску:
 
-Скачать скрипт installSelenoid.sh
+Скачать скрипт> installSelenoid.sh
 
-Дать права на исполнение
+Дать права на исполнение>
 sudo chmod +x ./installSelenoid.sh
 
-Запустить
+Запустить>
 sudo ./installSelenoid.sh
 
 
