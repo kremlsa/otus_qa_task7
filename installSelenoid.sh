@@ -16,6 +16,6 @@ fi
 #
 #Устанавливаем селеноид через менеджер и запускаем
 sudo curl -s https://aerokube.com/cm/bash | bash \
-&& ./cm selenoid start --vnc  --browsers "chrome;firefox" --args "-session-attempt-timeout 5m -service-startup-timeout 5m" -l 10
+&& ./cm selenoid start --vnc  --browsers "chrome:89.0;firefox:87.0" --args "-session-attempt-timeout 5m -service-startup-timeout 5m" -l 10
 #Запускаем графическую оболочку
 sudo ./cm selenoid-ui start
