@@ -1,20 +1,21 @@
 #Install docker and run selenoid
-#Refresh 
+#Получаем списки обновлений для пакетов
 sudo apt-get update
 #
-#Install docker if not installed
+#Если докера нет, то устанавливаем
 if [ $(dpkg-query -W -f='${Status}' docker.io | grep -c "ok installed") -eq 0];
 then
     sudo apt -y install docker.io;
 fi
 #
-#Install curl if not installed
+#Если curl нет, то устанавливаем
 if [ $(dpkg-query -W -f='${Status}' curl | grep -c "ok installed") -eq 0];
 then
     sudo apt install curl;
 fi
 #
-#Install selenoid container from cm
+#Устанавливаем селеноид через менеджер и запускаем
 sudo curl -s https://aerokube.com/cm/bash | bash \
-&& ./cm selenoid start --vnc  --browsers "chrome" -l 10 --args 'session-attempt-timeout 5m -service-sta>
+&& ./cm selenoid start --vnc  --browsers "chrome;firefox" --args "-session-attempt-timeout 5m -service-startup-timeout 5m" -l 10
+#Запускаем графическую оболочку
 sudo ./cm selenoid-ui start
