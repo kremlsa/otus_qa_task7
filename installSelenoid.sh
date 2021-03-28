@@ -3,13 +3,13 @@
 sudo apt-get update
 #
 #Если докера нет, то устанавливаем
-if [ $(dpkg-query -W -f='${Status}' docker.io | grep -c "ok installed") -eq 0];
+if [ $(dpkg-query -W -f='${Status}' docker.io | grep -c "ok installed") -eq 0 ];
 then
 sudo apt -y install docker.io
 fi
 #
 #Если curl нет, то устанавливаем
-if [ $(dpkg-query -W -f='${Status}' curl | grep -c "ok installed") -eq 0];
+if [ $(dpkg-query -W -f='${Status}' curl | grep -c "ok installed") -eq 0 ];
 then
 sudo apt install curl
 fi
